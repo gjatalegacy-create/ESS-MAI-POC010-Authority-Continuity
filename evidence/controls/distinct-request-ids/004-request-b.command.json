@@ -1,0 +1,7 @@
+[
+  "worker",
+  "<CASE_DIR>/actions.wal",
+  "<CASE_DIR>/request-3.json",
+  "request-b",
+  "normal"
+]

@@ -1,0 +1,9 @@
+{
+  "context": "five-cycle-context",
+  "operation": "persist",
+  "payload": "second local persistent effect",
+  "principal": "principal:alice",
+  "request_id": "r2",
+  "resource": "poc010-test-vault",
+  "scope": "poc010:persist"
+}

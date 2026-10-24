@@ -1,0 +1,5 @@
+{"action_sha256":"80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5","authority_scope":"trusted local test issuer; process-local source gate","authorization_id":"cycle-4-retry-r3:22876:1792869374631514700:1","event":"authorization_issued","generation":1,"nonce":1826492392652638129}
+{"action_sha256":"80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5","authorization":{"generation":1,"issuer_instance":"cycle-4-retry-r3:22876:1792869374631514700","nonce":1826492392652638129},"consumed":true,"event":"authorization_verified"}
+{"action_sha256":"80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5","effect_count":3,"event":"storage_verified","head_sha256":"496e42324bcb6df1f982a0b7892ca783826e55ba5d06b9046f1b7e166e517608"}
+{"action_sha256":"80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5","event":"atomic_claim","new_effect":false,"outcome":"existing"}
+{"action_sha256":"80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5","effect_count":3,"event":"result","receipt_sha256":"496e42324bcb6df1f982a0b7892ca783826e55ba5d06b9046f1b7e166e517608","status":"AlreadyCommitted"}

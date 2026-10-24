@@ -1,0 +1,7 @@
+[
+  "worker",
+  "<CASE_DIR>/actions.wal",
+  "<CASE_DIR>/request-8.json",
+  "cycle-3-before-commit",
+  "pause-before-commit"
+]

@@ -1,0 +1,49 @@
+{
+  "executed_utc_date": "2026-10-24",
+  "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)\nbinary: rustc\ncommit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea\ncommit-date: 2026-08-18\nhost: x86_64-pc-windows-gnu\nrelease: 1.98.0\nLLVM version: 22.1.8",
+  "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+  "commands": [
+    {
+      "command": "cargo test --locked --offline",
+      "exit_code": 0,
+      "unit_pass": 16,
+      "process_pass": 7,
+      "failed": 0,
+      "ignored": 0,
+      "warnings": 0
+    },
+    {
+      "command": "cargo test --release --locked --offline",
+      "exit_code": 0,
+      "unit_pass": 16,
+      "process_pass": 7,
+      "failed": 0,
+      "ignored": 0,
+      "warnings": 0
+    },
+    {
+      "command": "cargo build --release --locked --offline",
+      "exit_code": 0,
+      "warnings": 0
+    }
+  ],
+  "direct_toolchain_environment": "RUSTC and RUSTDOC pointed to the same direct Windows GNU toolchain binaries; CARGO_TARGET_DIR outside the source package; POC010_TEST_EVIDENCE outside the source package.",
+  "tested_code_sha256": {
+    "Cargo.toml": "0165828ab0dfcfe48d1d452a78137c90f404abe13ef7c64ebecfef83c8a6adfc",
+    "Cargo.lock": "594d1c503dfa36b0c12f97ae5893ba39c5f5ff7baa939d302d781abdaa5fb11f",
+    "src/lib.rs": "bade336ed864e028d4473f7a4d6ea80a029685f5bae61139c06e543cae854f24",
+    "src/main.rs": "f896bbf4b38c4137c11136d71993fbed9c186b46dc3b72f718973a025ab4f8ce",
+    "src/ledger.rs": "6db6973643d84d29833346bed1167837cc831768cbf0604ebddccafbb42987c2",
+    "src/source_gate.rs": "16c36864fb10c6b3551c86581b94e92beeb5e6f69872a7222a9bccc960d54b36",
+    "tests/process.rs": "ac626a2bd92e4e59dc76f57137fc0f1f52b28191890d10c03f3e2ddce0b4e953"
+  },
+  "tested_binary_sha256": "b0374fbd897a8479e84889e97a17e77dfaceb08f0e5e8f7956beb2b670b1b565",
+  "five_cycle_cumulative_physical_effects": [
+    1,
+    1,
+    2,
+    3,
+    3
+  ],
+  "limits": "Actual process termination, not power loss. Local bundled effect/receipt, not arbitrary external exactly-once execution. Automated review is not independent external peer review."
+}

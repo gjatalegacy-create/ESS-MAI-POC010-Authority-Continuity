@@ -1,0 +1,17 @@
+{
+  "snapshot_directory_version": "v1.8.9",
+  "internal_package_version": "1.7.8",
+  "before_sha256": {
+    "shadow/src/sovereign_ffi_gate.rs": "88ed03f02697ca772fb8d6bfd8575f16ce6404e720265a423ecffaa001081142",
+    "shadow/src/vault_transaction.rs": "5cf1f46130d3c4443fa1889adad77c554777c6db064548a81fff926fa38a6a14",
+    "shadow/src/vault_disk.rs": "e8b29a824795f4032cf9e8062017487b1fadb8f9543d3b57a47350307c1a2f5e",
+    "shadow/src/knowledge_vault.rs": "5dd362f225682d86d782d0b3b3e122a7d4eb58916ce344ae380add9d3602c36d"
+  },
+  "after_sha256": {
+    "shadow/src/sovereign_ffi_gate.rs": "88ed03f02697ca772fb8d6bfd8575f16ce6404e720265a423ecffaa001081142",
+    "shadow/src/vault_transaction.rs": "5cf1f46130d3c4443fa1889adad77c554777c6db064548a81fff926fa38a6a14",
+    "shadow/src/vault_disk.rs": "e8b29a824795f4032cf9e8062017487b1fadb8f9543d3b57a47350307c1a2f5e",
+    "shadow/src/knowledge_vault.rs": "5dd362f225682d86d782d0b3b3e122a7d4eb58916ce344ae380add9d3602c36d"
+  },
+  "all_equal": true
+}

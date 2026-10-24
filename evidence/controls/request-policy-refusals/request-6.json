@@ -1,0 +1,9 @@
+{
+  "context": "five-cycle-context",
+  "operation": "persist",
+  "payload": "only the declared scope may persist",
+  "principal": "principal:alice",
+  "request_id": "request-1",
+  "resource": "another-vault",
+  "scope": "poc010:persist"
+}

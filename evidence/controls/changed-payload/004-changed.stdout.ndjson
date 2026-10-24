@@ -1,0 +1,3 @@
+{"action_sha256":"07c6eae484a43c114cd3652d9a919216b992f653034a09db74facb87743286c0","authority_scope":"trusted local test issuer; process-local source gate","authorization_id":"changed:36544:1792869374170587300:1","event":"authorization_issued","generation":1,"nonce":1826492392652638129}
+{"action_sha256":"07c6eae484a43c114cd3652d9a919216b992f653034a09db74facb87743286c0","authorization":{"generation":1,"issuer_instance":"changed:36544:1792869374170587300","nonce":1826492392652638129},"consumed":true,"event":"authorization_verified"}
+{"action_sha256":"07c6eae484a43c114cd3652d9a919216b992f653034a09db74facb87743286c0","effect_count":1,"event":"storage_verified","head_sha256":"078749ae48c9c4b876ccd2295ffc7c54d1f6d92dcaa722bfca28d7e936d6f7ad"}

@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "artifact": "POC010 minimal process-local source gate and exact-binding adapter",
+  "source_product": "ESS-MAI v1.8.9",
+  "source_root_logical": "v1.8.9_ess_mai_phase_015/ess_mai",
+  "source_path_relative_to_root": "shadow/src/sovereign_ffi_gate.rs",
+  "source_sha256": "88ed03f02697ca772fb8d6bfd8575f16ce6404e720265a423ecffaa001081142",
+  "source_bytes": 24080,
+  "source_lines": 498,
+  "source_handling": "Read only; no canonical, sealed, or frozen source modified. Host-specific absolute paths excluded.",
+  "retained_source_blocks": [
+    {
+      "source_line_range_inclusive": [
+        22,
+        24
+      ],
+      "output_line_range_inclusive": [
+        13,
+        15
+      ],
+      "selected_bytes": 108,
+      "selected_sha256": "59ac3420530b21ed10799314e41a5472dfae534fcf900f18eb3f5ad2a38f9c22",
+      "transformation": "None; selected source bytes copied exactly."
+    },
+    {
+      "source_line_range_inclusive": [
+        27,
+        44
+      ],
+      "output_line_range_inclusive": [
+        17,
+        34
+      ],
+      "selected_bytes": 934,
+      "selected_sha256": "4513fea6d3bfe03b8b2260dc825050cff4a8b6852741577e89541828a2582643",
+      "transformation": "None; selected source bytes copied exactly."
+    },
+    {
+      "source_line_range_inclusive": [
+        49,
+        66
+      ],
+      "output_line_range_inclusive": [
+        36,
+        53
+      ],
+      "selected_bytes": 1446,
+      "selected_sha256": "1518758edd3c7cb715a48873fb3e324f11bdcf73ff4c542a2786b60e98944447",
+      "transformation": "None; selected source bytes copied exactly."
+    },
+    {
+      "source_line_range_inclusive": [
+        90,
+        148
+      ],
+      "output_line_range_inclusive": [
+        55,
+        113
+      ],
+      "selected_bytes": 3218,
+      "selected_sha256": "01d0c8f202078ff7b3ba413cec52164008c0ff9741213ecce2856aac7362cd39",
+      "transformation": "None; selected source bytes copied exactly."
+    }
+  ],
+  "omitted": [
+    "File banner and imports of verdict types, Mutex and OnceLock",
+    "Unused module nonce constants and CapHandle::INVALID",
+    "VerificationReceipt, seal_verified_output and native verdict dependencies",
+    "Singleton registry and extern C exports",
+    "Commit/payload/lineage code and original native fixtures/tests"
+  ],
+  "new_material": [
+    {
+      "kind": "scope and lifetime documentation",
+      "output_line_range_inclusive": [
+        1,
+        12
+      ]
+    },
+    {
+      "kind": "BoundGate exact-binding adapter and four unit tests",
+      "output_line_range_inclusive": [
+        115,
+        199
+      ],
+      "sha256": "2c44aaa609ec97bfd9e2b0e16260273529113915ca531086ff8935b0a8435c02"
+    }
+  ],
+  "adapter_semantics": [
+    "Private generation-to-byte-vector map retains exact canonical action-and-material bytes supplied by the caller.",
+    "Exact byte equality is required before invoking the unmodified validate_and_burn; wrong binding does not consume the source slot.",
+    "Issue retains the source S_SHADOW_WRITE nonce and original generation allocation.",
+    "consume returns only Result<(), String>; the source LgcToken is dropped locally and never transferred.",
+    "Two fresh valid handles with the same binding both consume successfully; no semantic idempotency is claimed by this gate."
+  ],
+  "boundary": "One fixture-server lifetime with externally owned synchronization; no interprocess authority transfer, persistence, native verdict, side effect, or semantic claim is provided by this module.",
+  "output_path": "src/source_gate.rs",
+  "output_sha256": "16c36864fb10c6b3551c86581b94e92beeb5e6f69872a7222a9bccc960d54b36",
+  "output_bytes": 9546,
+  "output_lines": 199,
+  "validation_status": "Exact retained-block bytes and output hash checked at extraction; unit tests authored but not executed by this extraction task."
+}

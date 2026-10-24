@@ -1,0 +1,7 @@
+[
+  "worker",
+  "<CASE_DIR>/actions.wal",
+  "<CASE_DIR>/request-1.json",
+  "wrong-binding-cached-true",
+  "wrong-binding"
+]

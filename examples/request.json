@@ -1,0 +1,10 @@
+{
+  "principal": "test-principal",
+  "operation": "persist",
+  "resource": "test-vault",
+  "scope": "poc010:persist",
+  "context": "one-authorized-local-persistence-context",
+  "request_id": "request-001",
+  "payload": "Exact local record, including punctuation."
+}
+

@@ -1,0 +1,2 @@
+{"action_sha256":"07c6eae484a43c114cd3652d9a919216b992f653034a09db74facb87743286c0","authority_scope":"trusted local test issuer; process-local source gate","authorization_id":"worker-missing:9120:1792869374147210000:1","event":"authorization_issued","generation":1,"nonce":1826492392652638129}
+{"action_sha256":"07c6eae484a43c114cd3652d9a919216b992f653034a09db74facb87743286c0","authorization":{"generation":1,"issuer_instance":"worker-missing:9120:1792869374147210000","nonce":1826492392652638129},"consumed":true,"event":"authorization_verified"}

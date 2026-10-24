@@ -1,0 +1,5 @@
+{"action_sha256":"afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260","authority_scope":"trusted local test issuer; process-local source gate","authorization_id":"cycle-5-historical-r1:13368:1792869374680548600:1","event":"authorization_issued","generation":1,"nonce":1826492392652638129}
+{"action_sha256":"afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260","authorization":{"generation":1,"issuer_instance":"cycle-5-historical-r1:13368:1792869374680548600","nonce":1826492392652638129},"consumed":true,"event":"authorization_verified"}
+{"action_sha256":"afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260","effect_count":3,"event":"storage_verified","head_sha256":"496e42324bcb6df1f982a0b7892ca783826e55ba5d06b9046f1b7e166e517608"}
+{"action_sha256":"afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260","event":"atomic_claim","new_effect":false,"outcome":"existing"}
+{"action_sha256":"afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260","effect_count":3,"event":"result","receipt_sha256":"5ea1ee9cd8a7031da5c55db9a0623ebb39c3f1d360f6cad3a104f83d4466e839","status":"AlreadyCommitted"}

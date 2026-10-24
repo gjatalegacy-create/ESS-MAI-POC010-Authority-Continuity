@@ -1,0 +1,164 @@
+{
+  "boundary": "local transactional append; effect and completion receipt share one durable record",
+  "cycles": [
+    {
+      "cycle": 1,
+      "observed_effect_count": 1,
+      "scenario": "two independently issued permits, synchronized workers",
+      "worker_results": [
+        {
+          "action_sha256": "afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260",
+          "effect_count": 1,
+          "event": "result",
+          "receipt_sha256": "5ea1ee9cd8a7031da5c55db9a0623ebb39c3f1d360f6cad3a104f83d4466e839",
+          "status": "AlreadyCommitted"
+        },
+        {
+          "action_sha256": "afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260",
+          "effect_count": 1,
+          "event": "result",
+          "receipt_sha256": "5ea1ee9cd8a7031da5c55db9a0623ebb39c3f1d360f6cad3a104f83d4466e839",
+          "status": "Committed"
+        }
+      ]
+    },
+    {
+      "cycle": 2,
+      "observed_effect_count": 1,
+      "result": {
+        "action_sha256": "afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260",
+        "effect_count": 1,
+        "event": "result",
+        "receipt_sha256": "5ea1ee9cd8a7031da5c55db9a0623ebb39c3f1d360f6cad3a104f83d4466e839",
+        "status": "AlreadyCommitted"
+      },
+      "scenario": "fresh process exact retry",
+      "wal_unchanged": true
+    },
+    {
+      "after_kill_effect_count": 1,
+      "crash_events": [
+        {
+          "action_sha256": "e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882",
+          "authority_scope": "trusted local test issuer; process-local source gate",
+          "authorization_id": "cycle-3-before-commit:16092:1792869374451992400:1",
+          "event": "authorization_issued",
+          "generation": 1,
+          "nonce": 1826492392652638129
+        },
+        {
+          "action_sha256": "e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882",
+          "authorization": {
+            "generation": 1,
+            "issuer_instance": "cycle-3-before-commit:16092:1792869374451992400",
+            "nonce": 1826492392652638129
+          },
+          "consumed": true,
+          "event": "authorization_verified"
+        },
+        {
+          "action_sha256": "e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882",
+          "effect_count": 1,
+          "event": "storage_verified",
+          "head_sha256": "5ea1ee9cd8a7031da5c55db9a0623ebb39c3f1d360f6cad3a104f83d4466e839"
+        },
+        {
+          "action_sha256": "e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882",
+          "effect_count": 1,
+          "event": "before_commit"
+        }
+      ],
+      "cycle": 3,
+      "observed_effect_count": 2,
+      "result": {
+        "action_sha256": "e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882",
+        "effect_count": 2,
+        "event": "result",
+        "receipt_sha256": "a84797c3c8dc219a1b9bb6158b969e614a633157da0e045d622a75a854c3ec05",
+        "status": "Committed"
+      },
+      "scenario": "kill before commit then fresh retry"
+    },
+    {
+      "after_kill_effect_count": 3,
+      "crash_events": [
+        {
+          "action_sha256": "80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5",
+          "authority_scope": "trusted local test issuer; process-local source gate",
+          "authorization_id": "cycle-4-after-commit:7192:1792869374561669200:1",
+          "event": "authorization_issued",
+          "generation": 1,
+          "nonce": 1826492392652638129
+        },
+        {
+          "action_sha256": "80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5",
+          "authorization": {
+            "generation": 1,
+            "issuer_instance": "cycle-4-after-commit:7192:1792869374561669200",
+            "nonce": 1826492392652638129
+          },
+          "consumed": true,
+          "event": "authorization_verified"
+        },
+        {
+          "action_sha256": "80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5",
+          "effect_count": 2,
+          "event": "storage_verified",
+          "head_sha256": "a84797c3c8dc219a1b9bb6158b969e614a633157da0e045d622a75a854c3ec05"
+        },
+        {
+          "action_sha256": "80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5",
+          "effect_count": 2,
+          "event": "before_commit"
+        },
+        {
+          "action_sha256": "80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5",
+          "event": "atomic_claim",
+          "new_effect": true,
+          "outcome": "committed",
+          "receipt_sha256": "496e42324bcb6df1f982a0b7892ca783826e55ba5d06b9046f1b7e166e517608"
+        },
+        {
+          "action_sha256": "80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5",
+          "effect_count": 3,
+          "event": "effect_durable_before_ack",
+          "receipt_sha256": "496e42324bcb6df1f982a0b7892ca783826e55ba5d06b9046f1b7e166e517608"
+        }
+      ],
+      "cycle": 4,
+      "durable_event": {
+        "action_sha256": "80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5",
+        "effect_count": 3,
+        "event": "effect_durable_before_ack",
+        "receipt_sha256": "496e42324bcb6df1f982a0b7892ca783826e55ba5d06b9046f1b7e166e517608"
+      },
+      "observed_effect_count": 3,
+      "result": {
+        "action_sha256": "80696be9f7f3b48f91eb2cb826e0d1605b5c49cce701257d7127f11b136e7ed5",
+        "effect_count": 3,
+        "event": "result",
+        "receipt_sha256": "496e42324bcb6df1f982a0b7892ca783826e55ba5d06b9046f1b7e166e517608",
+        "status": "AlreadyCommitted"
+      },
+      "scenario": "kill after durable local effect and receipt, before caller acknowledgement",
+      "wal_unchanged_on_retry": true
+    },
+    {
+      "changed_payload_refused": true,
+      "cycle": 5,
+      "observed_effect_count": 3,
+      "result": {
+        "action_sha256": "afeb31d025fbfec8a10fbc6451627a010eb4c34d59c847e84550bb38886da260",
+        "effect_count": 3,
+        "event": "result",
+        "receipt_sha256": "5ea1ee9cd8a7031da5c55db9a0623ebb39c3f1d360f6cad3a104f83d4466e839",
+        "status": "AlreadyCommitted"
+      },
+      "scenario": "historical exact retry and changed payload refusal",
+      "wal_unchanged": true
+    }
+  ],
+  "external_nontransactional_exactly_once_claimed": false,
+  "final_physical_effect_count": 3,
+  "same_store_and_principal_resource_scope_context": true
+}

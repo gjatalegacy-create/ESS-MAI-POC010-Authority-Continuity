@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "Cite the exact POC010 commit or release used. Predecessor DOIs identify earlier artifacts."
+type: software
+title: "ESS-MAI POC-010: Authority Non-Duplication and Lawful Execution Continuity"
+version: "0.1.0"
+authors:
+  - family-names: "Gjata"
+    given-names: "Bledar"
+    affiliation: "Independent Researcher, Albania"
+    orcid: "https://orcid.org/0009-0003-7854-266X"
+license: Apache-2.0
+repository-code: "https://github.com/gjatalegacy-create/ESS-MAI-POC010-Authority-Continuity"
+keywords:
+  - ESS-MAI
+  - Rust
+  - authority non-duplication
+  - idempotency
+  - concurrency
+  - crash recovery
+  - reproducibility
+abstract: "A source-derived local transaction experiment answering a public concurrency and crash-recovery test proposal. An extracted process-local one-use gate is combined with new exact action/material binding and a persistent, OS-locked local ledger. Five fresh-process cycles test concurrent already-verified authorizations, exact retries, worker death before commit, worker death after durable local effect/receipt before caller acknowledgement, and later historical retry. The claim is bounded to cooperative local persistence, not arbitrary external exactly-once execution or native Shadow knowledge admission. AI-assisted engineering is disclosed."
+references:
+  - type: software
+    title: "ESS-MAI POC003–006 executable prior-art archive"
+    doi: "10.5281/zenodo.22750188"
+  - type: software
+    title: "AIGovern-Cyber POC007 public reference capsule"
+    doi: "10.5281/zenodo.23596907"
+  - type: generic
+    title: "Constitutional Self-Governance in ESS-MAI"
+    doi: "10.5281/zenodo.23597026"
+  - type: generic
+    title: "POC005: Proposal for an Adversarial Test: Concurrent Authorization and Crash Recovery"
+    url: "https://github.com/gjatalegacy-create/ESS-MAI/discussions/13"
+

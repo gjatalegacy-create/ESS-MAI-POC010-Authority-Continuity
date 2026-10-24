@@ -1,0 +1,23 @@
+# Draft response to MANU-de — POC010
+
+**Response prepared; not posted to the discussion.** This text addresses [ESS-MAI Discussion #13](https://github.com/gjatalegacy-create/ESS-MAI/discussions/13), including MANU-de's clarification of 24 October 2026. The measured local results and their exact source hashes are in [RESULTS.md](RESULTS.md) and [EXECUTION.json](evidence/EXECUTION.json). No independent external validation is asserted.
+
+Hello MANU-de,
+
+Your clarification gives us a concrete experiment to compare. I retain your distinction between a proposed adversarial test and a defect reproduced in the original Rust source, and between a local transaction and a separate external effect.
+
+I have prepared **ESS-MAI POC-010: Authority Non-Duplication and Lawful Execution Continuity** as a bounded successor experiment. It retains selected, unchanged blocks from the published POC005 gate and adds an explicitly new request-binding wrapper, persistent action adapter and process harness. The extraction manifest distinguishes those parts. The original source's generation-local gate still permits two independently issued handles for the same request; it is not relabeled as a pre-existing durable semantic ledger.
+
+The logical action identity binds the principal, operation, resource, delegated fixture scope, execution context and logical request ID. The ID distinguishes two intended operations with identical payloads. Exact retries share that identity and payload bytes; changed payload under an existing identity is refused. This is declared byte/value equivalence, not inference that arbitrary natural-language requests have the same meaning.
+
+The concurrency experiment starts two independent worker processes, each with a fresh local authorization. Both authorizations are verified and consumed before the parent releases either worker from the barrier. Each must pass its own gate, including on a cached retry. Under one store lock, the new adapter replays the persistent records and coordinates the action-level claim. The measured result was one physical append and the same original receipt returned to both workers. Structured output identifies the action digest, issuer/generation, verification and consumption, claim outcome, receipt and effect count.
+
+The crash experiment deliberately implements the **local transactional case**. The observable effect is the append itself: claim, payload and completion receipt share one frame, synchronized before the caller response. The harness killed the worker after `effect_durable_before_ack`, then started a replacement process with fresh authorization. The replacement reconstructed the committed frame, returned its receipt and left the file unchanged. The completion receipt was already durable at this interruption point; only the caller acknowledgement was missing.
+
+This does not test a separate service's committed side effect followed by a crash before a distinct completion record. That case still needs external idempotency or reliable reconciliation. An incomplete local frame also remains a visible fail-closed condition; automatic recovery from every interrupted write is not claimed.
+
+The same-store five-cycle sequence is: concurrent `r1`; exact fresh-process retry of `r1`; kill before commit of `r2` and retry; kill after durable effect of `r3` and retry; then retry historical `r1` and reject changed material under its identity. The measured cumulative effect counts were `1, 1, 2, 3, 3`. The final debug and release runs each passed 23 tests, with zero ignored tests and zero warnings; the locked offline release build passed. The public reproduction record contains process exits, crash events, restored state and final store bytes. It remains an author-side result for independent challenge.
+
+The architectural boundary remains `GCL > Shadow verdict > Vault sink`. POC010 does not mint a native `LawConfirmedVerdict`, substitute synthetic `(1, 1)` evidence or admit native knowledge. Its local fixture receipt is not constitutional authority. The original POC005 `CompatibilityHold` remains valid; this capsule does not claim to have connected the complete native transaction path.
+
+The source rationale, Academic 1–3 context, pinned POC005 references, implementation boundary and falsifiers are collected in [THEORY_AND_PROVENANCE.md](THEORY_AND_PROVENANCE.md). The intended next review object is the pinned capsule together with its measured logs. A useful counterexample would show two physical effects for one declared identity, an unauthorized cached result, a changed-input replay accepted as equivalent, or an earlier receipt lost after the later cycles. Such findings would narrow or falsify the local claim and remain part of its evidence.

@@ -1,0 +1,23 @@
+[package]
+name = "ess-mai-poc010-action-continuity"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+license = "Apache-2.0"
+authors = ["Bledar Gjata"]
+description = "Source-derived authority non-duplication and lawful local execution continuity under concurrency and restart"
+
+[lib]
+name = "poc010_action_continuity"
+
+[[bin]]
+name = "poc010-action-continuity"
+path = "src/main.rs"
+
+[dependencies]
+sha2 = "=0.10.9"
+serde_json = "=1.0.150"
+
+[lints.rust]
+warnings = "deny"
+

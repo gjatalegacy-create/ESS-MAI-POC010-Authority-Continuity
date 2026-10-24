@@ -1,0 +1,7 @@
+{"action_sha256":"e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882","authority_scope":"trusted local test issuer; process-local source gate","authorization_id":"cycle-3-retry-r2:15772:1792869374509108300:1","event":"authorization_issued","generation":1,"nonce":1826492392652638129}
+{"action_sha256":"e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882","authorization":{"generation":1,"issuer_instance":"cycle-3-retry-r2:15772:1792869374509108300","nonce":1826492392652638129},"consumed":true,"event":"authorization_verified"}
+{"action_sha256":"e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882","effect_count":1,"event":"storage_verified","head_sha256":"5ea1ee9cd8a7031da5c55db9a0623ebb39c3f1d360f6cad3a104f83d4466e839"}
+{"action_sha256":"e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882","effect_count":1,"event":"before_commit"}
+{"action_sha256":"e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882","event":"atomic_claim","new_effect":true,"outcome":"committed","receipt_sha256":"a84797c3c8dc219a1b9bb6158b969e614a633157da0e045d622a75a854c3ec05"}
+{"action_sha256":"e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882","effect_count":2,"event":"effect_durable_before_ack","receipt_sha256":"a84797c3c8dc219a1b9bb6158b969e614a633157da0e045d622a75a854c3ec05"}
+{"action_sha256":"e433755ae15c9ec7c71af703360a596ba0abbc6df17de4f61bfeebb787dda882","effect_count":2,"event":"result","receipt_sha256":"a84797c3c8dc219a1b9bb6158b969e614a633157da0e045d622a75a854c3ec05","status":"Committed"}

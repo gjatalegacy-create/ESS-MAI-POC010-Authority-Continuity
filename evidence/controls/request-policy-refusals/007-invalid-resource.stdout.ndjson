@@ -1,0 +1,2 @@
+{"action_sha256":"79a0179c1ec0dca6811e505cc09e635f266b728faadbbb15d348fd28da3e1b01","authority_scope":"trusted local test issuer; process-local source gate","authorization_id":"invalid-resource:37904:1792869374262053100:1","event":"authorization_issued","generation":1,"nonce":1826492392652638129}
+{"action_sha256":"79a0179c1ec0dca6811e505cc09e635f266b728faadbbb15d348fd28da3e1b01","authorization":{"generation":1,"issuer_instance":"invalid-resource:37904:1792869374262053100","nonce":1826492392652638129},"consumed":true,"event":"authorization_verified"}

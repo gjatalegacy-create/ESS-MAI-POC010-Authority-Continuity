@@ -1,0 +1,30 @@
+name: Cargo and five-cycle continuity
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify release hashes and recorded evidence
+        run: python tools/verify.py
+      - name: Install declared toolchain
+        run: rustup toolchain install 1.98.0 --profile minimal
+      - name: Fetch locked dependencies
+        run: cargo +1.98.0 fetch --locked
+      - name: Debug tests
+        run: cargo +1.98.0 test --locked --offline
+      - name: Release tests with real subprocess continuity
+        env:
+          POC010_TEST_EVIDENCE: run-evidence
+        run: cargo +1.98.0 test --release --locked --offline
+      - name: Release build
+        run: cargo +1.98.0 build --release --locked --offline
